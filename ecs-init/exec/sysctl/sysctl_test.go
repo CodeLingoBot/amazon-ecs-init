@@ -25,7 +25,7 @@ func TestNewIpv4RouteLocalNetFailsWhenExecutableNotFound(t *testing.T) {
 	defer ctrl.Finish()
 
 	mockExec := NewMockExec(ctrl)
-	mockExec.EXPECT().LookPath(sysctlExecutable).Return("", fmt.Errorf("Not found"))
+	mockExec.EXPECT().LookPath(sysctlExecutable).Return("", fmt.Errorf("not found"))
 
 	_, err := NewIpv4RouteLocalNet(mockExec)
 	if err == nil {

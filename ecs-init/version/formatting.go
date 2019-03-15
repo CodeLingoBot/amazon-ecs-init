@@ -29,7 +29,7 @@ func String() string {
 // PrintVersion print out the
 func PrintVersion() error {
 	if Version == "" || GitShortHash == "" {
-		return fmt.Errorf("Version info not set")
+		return fmt.Errorf("version info not set")
 	}
 
 	fmt.Println(String())

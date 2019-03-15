@@ -85,7 +85,7 @@ func (Ipv4RouteLocalnet *Ipv4RouteLocalnet) parseDefaultRouteLocalNet(out []byte
 	parts := strings.SplitN(s, "=", 2)
 	if len(parts) != 2 {
 		log.Errorf("Unexpected value read when determining default value for route_localnet, %d parts parsed for %s", len(parts), s)
-		return 0, fmt.Errorf("Errpr parsing default route_localnet value")
+		return 0, fmt.Errorf("errpr parsing default route_localnet value")
 	}
 
 	val, err := strconv.ParseInt(strings.TrimSpace(parts[1]), 10, 64)

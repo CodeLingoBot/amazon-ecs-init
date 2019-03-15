@@ -74,7 +74,7 @@ func (route *NetfilterRoute) Remove() error {
 	preroutingErr := route.modifyNetfilterEntry(iptablesDelete, getPreroutingChainArgs)
 	if preroutingErr != nil {
 		// Add more context for error in modifying the prerouting chain
-		preroutingErr = fmt.Errorf("Error removing prerouting chain entry: %v", preroutingErr)
+		preroutingErr = fmt.Errorf("error removing prerouting chain entry: %v", preroutingErr)
 	}
 	outputErr := route.modifyNetfilterEntry(iptablesDelete, getOutputChainArgs)
 	if outputErr != nil {
@@ -83,7 +83,7 @@ func (route *NetfilterRoute) Remove() error {
 			return fmt.Errorf("%v; Error removing output chain entry: %v", preroutingErr, outputErr)
 		}
 		// Add more context for error in modifying the output chain
-		return fmt.Errorf("Error removing output chain entry: %v", outputErr)
+		return fmt.Errorf("error removing output chain entry: %v", outputErr)
 	}
 	return preroutingErr
 }

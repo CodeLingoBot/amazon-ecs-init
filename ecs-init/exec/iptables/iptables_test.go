@@ -26,7 +26,7 @@ func TestNewNetfilterRouteFailsWhenExecutableNotFound(t *testing.T) {
 	defer ctrl.Finish()
 
 	mockExec := NewMockExec(ctrl)
-	mockExec.EXPECT().LookPath(iptablesExecutable).Return("", fmt.Errorf("Not found"))
+	mockExec.EXPECT().LookPath(iptablesExecutable).Return("", fmt.Errorf("not found"))
 
 	_, err := NewNetfilterRoute(mockExec)
 	if err == nil {

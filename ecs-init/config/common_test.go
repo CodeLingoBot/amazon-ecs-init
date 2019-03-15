@@ -64,7 +64,7 @@ func TestGetAgentPartitionBucketRegion(t *testing.T) {
 			destination: "cn-north-1",
 		}, {
 			region: "invalid",
-			err:    fmt.Errorf("Partition not found"),
+			err:    fmt.Errorf("partition not found"),
 		},
 	}
 
